@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class DatosIngreso {
     private Date fechaIngreso;
-    private Categorias categorias;
-    private Proveedor proveedor;
+    private Date fechaCaducidad;
+    private Integer lote; 
     private UbicacionProducto ubicacionProducto;
- 
+    private Integer cantidaEnAlmacen; 
 }

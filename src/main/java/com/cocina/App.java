@@ -1,4 +1,4 @@
-package com.cocina.viewmodels;
+package com.cocina;
 
 public class App {
     
