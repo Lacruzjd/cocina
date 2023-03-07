@@ -1,25 +1,20 @@
 package com.cocina.models.inventario.metadata;
 
-public class Categorias {
-    private Categoria categoria;
-    private SubCategoria subCategoria;
+public class Categorias  {
 
-    public Categoria getCategoria() {
-        return categoria;
-    }
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
-    public SubCategoria getSubCategoria() {
-        return subCategoria;
-    }
-    public void setSubCategoria(SubCategoria subCategoria) {
-        this.subCategoria = subCategoria;
-    }
+    private Integer Id;
+    private String nombre;
 
-    @Override
-    public String toString() {
-        return "Categorias [categoria=" + categoria + ", subCategoria=" + subCategoria + "]";
+    public Integer getId() {
+        return Id;
     }
-   
+    public void setId(Integer id) {
+        Id = id;
+    }
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    } 
 }

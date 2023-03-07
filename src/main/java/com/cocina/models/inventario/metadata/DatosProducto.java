@@ -2,7 +2,7 @@ package com.cocina.models.inventario.metadata;
 
 import java.util.Date;
 
-public class DatosProcuto {
+public class DatosProducto {
     private String nombreProducto;
     private Integer contenidoNeto;
     private Integer lote; 
@@ -10,7 +10,6 @@ public class DatosProcuto {
     private String listaIngredientes;
     private Fabricante fabricante;
     private String condicionConservacion;
-    //Pais paisOrigen;
     
     public String getNombreProducto() {
         return nombreProducto;
