@@ -1,5 +1,6 @@
 package com.cocina.models.inventario;
 
+
 public class Categorias  {
 
     private Integer Id;

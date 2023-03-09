@@ -1,8 +1,10 @@
 package com.cocina.viewmodels.inventario;
 
+import jakarta.persistence.SqlResultSetMapping;
+
 public interface CategoriaAdmin {
     
-    public void definirCategoria(String name);
-    public void validarCategoria();
+    public String definirCategoria(String name);
+    public boolean validarCategoria();
     public void agregarCategoria();
 }

@@ -1,35 +1,43 @@
 package com.cocina.viewmodels.inventario;
 
-import com.cocina.models.inventario.Categoria;
-import com.cocina.services.inventario.CategoriaDaoImpl;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-public class categoriaAdminImpl implements CategoriaAdmin {
+import com.cocina.models.inventario.Categoria;
+import com.cocina.services.inventario.InventarioDaoImplSQLite;
+
+public class CategoriaAdminImpl {
 
     private String name;
-    CategoriaDaoImpl coneccion = new CategoriaDaoImpl();
+    InventarioDaoImplSQLite coneccion = new InventarioDaoImplSQLite();
 
-    @Override
-    public void definirCategoria(String name) {
+    public String definirCategoria(String name) {
         this.name = name;
-        validarCategoria();
+        return this.name;
     }
 
-    @Override
-    public void validarCategoria() {
-
-        if (coneccion.consultarExistencia(name)) {
-            System.out.println("Dato Existe en la DB");
-        } else {
-            agregarCategoria();
+    public boolean formatoValido() {
+        Pattern pat = Pattern.compile("^[a-zA-Z]*$");
+        Matcher mat = pat.matcher(this.name);
+        if(mat.matches()){
+            return true;
         }
+        return false;
+    }
+    
+    public boolean categoriaExiste() {
+        if (coneccion.consultarExistencia(this.name)) {
+            return true;
+        }
+        return false;
     }
 
-    @Override
-    public void agregarCategoria() {
-
+    public String agregarCategoria() {
+        if(formatoValido() && !categoriaExiste()){
             Categoria categoria = new Categoria();
             categoria.setNombre(name);
             coneccion.guardar(categoria);
+        }
+        return "Guardado";
     }
-
 }
